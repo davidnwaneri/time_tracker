@@ -1,7 +1,18 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:time_tracker_app/component.dart';
 
 class SignInPage extends StatelessWidget {
+  Future<void> _signInAnonymously() async {
+    try {
+      final UserCredential userCredential =
+          await FirebaseAuth.instance.signInAnonymously();
+      print('${userCredential.user.uid}');
+    } catch (e) {
+      print('This is the Error that was caught: ' + e.toString());
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -51,7 +62,7 @@ class SignInPage extends StatelessWidget {
               SizedBox(height: 8.0),
               SignInButton(
                 buttonText: 'Go Anonymous',
-                buttonOnPressed: () {},
+                buttonOnPressed: _signInAnonymously,
                 buttonColour: Colors.lime[300],
                 buttonTextColour: Colors.black,
               ),

@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "11416725018",
+    "project_id": "time-tracker-app-70671",
+    "storage_bucket": "time-tracker-app-70671.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:11416725018:android:d85f5491a35f999dd013a3",
+        "android_client_info": {
+          "package_name": "com.davidn.time_tracker_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "11416725018-at76ridph5pkuhmpsl7csp9v93tjeqkm.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.davidn.time_tracker_app",
+            "certificate_hash": "060a188695eeab6cfd5ba4dba01dd40376b3bfda"
+          }
+        },
+        {
+          "client_id": "11416725018-37gdo6h4l65lb23meecrfooddjbfd9dk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDiSRcTKklegR2a9CHo7F313an50cRowr8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "11416725018-37gdo6h4l65lb23meecrfooddjbfd9dk.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
