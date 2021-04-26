@@ -1,13 +1,30 @@
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:time_tracker_app/auth.dart';
 import 'package:time_tracker_app/component.dart';
 
 class SignInPage extends StatelessWidget {
+  final AuthBase auth;
+
+  SignInPage({@required this.auth});
+
   Future<void> _signInAnonymously() async {
     try {
-      final UserCredential userCredential =
-          await FirebaseAuth.instance.signInAnonymously();
-      print('${userCredential.user.uid}');
+      await auth.signInAnonymously();
+    } catch (e) {
+      print('This is the Error that was caught: ' + e.toString());
+    }
+  }
+
+  Future<void> _signInWithGoogle() async {
+    try {
+      await auth.signInWithGoogle();
+    } catch (e) {
+      print('This is the Error that was caught: ' + e.toString());
+    }
+  }
+  Future<void> _signInWithFacebook() async {
+    try {
+      await auth.signInWithFacebook();
     } catch (e) {
       print('This is the Error that was caught: ' + e.toString());
     }
@@ -18,6 +35,7 @@ class SignInPage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text('Time Tracker'),
+        centerTitle: true,
         elevation: 3.0,
       ),
       body: Center(
@@ -37,13 +55,13 @@ class SignInPage extends StatelessWidget {
               SocialSignInButton(
                 buttonLogo: 'images/logo/google-logo.png',
                 buttonText: 'Sign in with Google',
-                buttonOnPressed: () {},
+                buttonOnPressed: _signInWithGoogle,
               ),
               SizedBox(height: 8.0),
               SocialSignInButton(
                 buttonLogo: 'images/logo/facebook-logo.png',
                 buttonText: 'Sign in with Facebook',
-                buttonOnPressed: () {},
+                buttonOnPressed: _signInWithFacebook,
                 buttonColour: Color(0xFF334d92),
                 buttonTextColour: Colors.white,
               ),
